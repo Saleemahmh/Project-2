@@ -15,7 +15,7 @@ public class ChatController {
 	@MessageMapping("/chat")
 	@SendTo("/topic/message")
 	public OutputMessage sendMessage(Message message){
-		System.out.println("Inside chat contoller of back end...");
+		System.out.println("Chat contoller of back end.........");
 		return new OutputMessage(message,new Date());
 	}
 }

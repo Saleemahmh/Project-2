@@ -5,14 +5,43 @@
 <title>register page</title>
 </head>
 <style>
-body { 
+/* body { 
   background: url(pages/back.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+} */
+body {
+	background:
+		url('http://cdn.wallpapersafari.com/60/5/sDk1lw.jpg')
+		no-repeat center center fixed;
 }
 
+
+.form-signin {
+	max-width: 280px;
+	padding: 15px;
+	margin: 100px;
+	margin-top: 10px;
+}
+
+.input-group-addon {
+	background-color: rgb(50, 118, 177);
+	border-color: rgb(40, 94, 142);
+	color: rgb(255, 255, 255);
+}
+
+.form-control:focus {
+	background-color: rgb(50, 118, 177);
+	border-color: rgb(40, 94, 142);
+	color: rgb(255, 255, 255);
+}
+
+.well-default {
+	opacity: 0.8;
+	/*margin-top:30px;*/
+}
 </style>
 <body>
 
@@ -29,10 +58,12 @@ body {
 
 		<div ng-show='ctrl.user.errorMessage=="" '>
 
- -->			<div class="panel panel-default">
-				<div class="panel-heading">
-					<span class="lead">User Registration Form </span>
-				</div>
+ -->			<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					<div class="well well-default">
+						<div class="well-body">
+							<h3 class="text-center" style="color: black;">SIGN UP</h3>
 				<div class="formcontainer">
 					<form ng-submit="ctrl.submit()" name="myForm"
 						class="form-horizontal">
@@ -55,10 +86,11 @@ body {
 
 						</div>
 
-
+						<br>
 						<div class="row">
 							<div class="form-group col-md-12">
-								<label class="col-md-2 control-lable" for="userid">ID</label>
+								<label class="col-md-2 control-lable" for="userid"><span
+										class="glyphicon glyphicon-user" style="color: black;"></span></label>
 								<div class="col-md-7">
 									<input type="text" ng-model="ctrl.Userdetails.userid" id="userid"
 										class="userid form-control input-sm"
@@ -70,7 +102,8 @@ body {
 
 						<div class="row">
 							<div class="form-group col-md-12">
-								<label class="col-md-2 control-lable" for="username">Name</label>
+								<label class="col-md-2 control-lable" for="username"><span
+										class="glyphicon glyphicon-pencil" style="color: black;"></span></label>
 								<div class="col-md-7">
 									<input type="text" ng-model="ctrl.Userdetails.username" id="username"
 										class="username form-control input-sm"
@@ -81,7 +114,8 @@ body {
 
 						<div class="row">
 							<div class="form-group col-md-12">
-								<label class="col-md-2 control-lable" for="password">Password</label>
+								<label class="col-md-2 control-lable" for="password"><span
+										class="glyphicon glyphicon-lock" style="color: black;"></span></label>
 								<div class="col-md-7">
 									<input type="password" ng-model="ctrl.Userdetails.password"
 										id="password" class="username form-control input-sm"
@@ -93,7 +127,8 @@ body {
 
 						<div class="row">
 							<div class="form-group col-md-12">
-								<label class="col-md-2 control-lable" for="email">Email</label>
+								<label class="col-md-2 control-lable" for="email"><span
+										class="glyphicon glyphicon-envelope" style="color: black;"></span></label>
 								<div class="col-md-7">
 									<input type="email" ng-model="ctrl.Userdetails.email" id="email"
 										class="email form-control input-sm"
@@ -105,7 +140,8 @@ body {
 
 						<div class="row">
 							<div class="form-group col-md-12">
-								<label class="col-md-2 control-lable" for="contact">Mobile</label>
+								<label class="col-md-2 control-lable" for="contact"><span
+										class="glyphicon glyphicon-phone" style="color: black;"></span></label>
 								<div class="col-md-7">
 									<input type="tel" ng-model="ctrl.Userdetails.contact" id="contact"
 										class="mobile form-control input-sm"
@@ -118,7 +154,8 @@ body {
 
 						<div class="row">
 							<div class="form-group col-md-12">
-								<label class="col-md-2 control-lable" for="address">Address</label>
+								<label class="col-md-2 control-lable" for="address"><span
+										class="glyphicon glyphicon-map-marker" style="color: black;"></span></label>
 								<div class="col-md-7">
 									<input type="text" width="100" height="50"
 										ng-model="ctrl.Userdetails.address" id="address"
