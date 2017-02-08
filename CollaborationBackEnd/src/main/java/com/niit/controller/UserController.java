@@ -127,7 +127,7 @@ public class UserController {
 		{
 			userdetails.setErrorcode("200");
 			log.debug("-->User exist with above credentials");
-			session.setAttribute("loggegInUser",userdetails);
+			session.setAttribute("loggedInUser",userdetails);
 			session.setAttribute("loggedInUserId", userdetails.getUserid());
 			friendDAO.setOnLine(userdetails.getUserid());
 			userdetailsDAO.setOnLine(userdetails.getUserid());
@@ -142,6 +142,8 @@ public class UserController {
 		friendDAO.setOffLine(userdetails.getUserid());
 		userdetailsDAO.setOffLine(userdetails.getUserid());
 		session.invalidate();
+		System.out.println("User logged out does not exist");
 		return new ResponseEntity<Userdetails>(userdetails,HttpStatus.OK);
+		
 	}
 }
