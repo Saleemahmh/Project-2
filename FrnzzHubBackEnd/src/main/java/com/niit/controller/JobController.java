@@ -33,8 +33,9 @@ public class JobController {
 	
 	@RequestMapping(value="/postAJob",method=RequestMethod.POST)
 	public ResponseEntity<?> postAJob(@RequestBody Job job,HttpSession session){
-		Userdetails user=(Userdetails)session.getAttribute("user");
+		Userdetails user= (Userdetails) session.getAttribute("user");
 		if(user==null){
+			System.out.println("inside post job USER is null");
 			Error error=new Error("Unauthorized user.. login using valid credentials");
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);//401
 		}
