@@ -135,7 +135,7 @@ public class UserController {
 		return new ResponseEntity<Userdetails>(userdetails,HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/user/logout/",method=RequestMethod.POST)
+	/*@RequestMapping(value="/user/logout/",method=RequestMethod.POST)
 	public ResponseEntity<Userdetails> logout(HttpSession session)
 	{
 		userdetails= userdetailsDAO.authenticate(userdetails.getUserid(), userdetails.getPassword());
@@ -145,5 +145,19 @@ public class UserController {
 		System.out.println("User logged out does not exist");
 		return new ResponseEntity<Userdetails>(userdetails,HttpStatus.OK);
 		
+	}*/
+	@RequestMapping(value="/user/logout/",method=RequestMethod.GET)
+	public ResponseEntity<Userdetails> logout(HttpSession session)
+	{
+		System.out.println("logout method");
+		Userdetails loggedInUser = (Userdetails) session.getAttribute("loggedInUser");
+
+		userdetails= userdetailsDAO.authenticate(loggedInUser.getUserid(), loggedInUser.getPassword());
+		
+		/*userdetails= userdetailsDAO.authenticate(userdetails.getUserid(), userdetails.getPassword());*/
+		friendDAO.setOffLine(loggedInUser.getUserid());
+		userdetailsDAO.setOffLine(loggedInUser.getUserid());
+		session.invalidate();
+		return new ResponseEntity<Userdetails>(userdetails,HttpStatus.OK);
 	}
 }

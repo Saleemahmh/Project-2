@@ -21,7 +21,7 @@ app
 								address : '',
 								email : '',
 								is_online : '',
-								Role : '',
+								role : '',
 								errorcode : '',
 								errormessage : ''
 							};
@@ -131,14 +131,15 @@ app
 							};
 
 							self.logout = function() {
-								console.log("logout")
+								console.log("logout in controller_user............")
+								
 								$rootScope.currentUser = {};
 								$cookieStore.remove('currentUser');
-								UserService.logout()
+								UserService.logout();
+								
 								$location.path('/');
 
 							}
-
 							self.deleteUser = function(userid) {
 								console.log("UserController...")
 								UserService

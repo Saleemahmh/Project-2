@@ -11,6 +11,83 @@
 
 <title>Create Blog</title>
 </head>
+<style>
+body{
+	background-color: transparent;
+	font:oblique;
+	font-size:19px;
+	font-family: 'Didot-Italic';
+	font-style: italic;
+	
+}
+.panel-default {
+opacity: 0.9;
+margin-top:30px;
+}
+.form-group.last { margin-bottom:0px; }
+
+.jumbotron {
+	text-align: center;
+	width: 50rem;
+	border-radius: 0.5rem;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: center fixed;
+	margin: 4rem auto;
+	background-color:transparent;
+	padding: 2rem;
+}
+
+.container .glyphicon-list-alt {
+	font-size: 10rem;
+	margin-top: 3rem;
+	color: pink;
+}
+
+input {
+	width: 100%;
+	margin-bottom: 1.4rem;
+	padding: 1rem;
+	background-color: #ecf2f4;
+	border-radius: 0.2rem;
+	border: none;
+}
+h2 {
+	margin-bottom: 3rem;
+	font-weight: bold;
+	color: white;
+}
+label{color:white;}
+.btn {
+	border-radius: 0.2rem;
+}
+.btn .glyphicon {
+	font-size: 3rem;
+	color: #fff;
+}
+.full-width {
+	background-color: #8eb5e2;
+	width: 100%;
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+	-moz-border-radius-topright: 0;
+	-moz-border-radius-bottomright: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.form-group {
+	position: center fixed;
+	bottom: 0;
+	left: 0;
+	margin-bottom: 3rem;
+	margin-left: 3rem;
+	margin-right: 3rem;
+}
+</style>
+</style>
 <body>
 
 
@@ -25,19 +102,20 @@
 
  -->
 	<!-- 	<div ng-show='ctrl.Userdetails.errorMessage=="" '> -->
-
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<span class="lead">Create Blog</span>
-				</div>
+<div class="container">
+    <div class="jumbotron">
+  <div class="container">
+    <span class="glyphicon glyphicon-list-alt"></span>
+    <h2>Create Blog</h2>
+			
 				<div class="formcontainer">
 					<form ng-submit="ctrl.submit()" name="myForm"
 						class="form-horizontal">
 
 						
 						<div class="row">
-							<div class="form-group col-md-12">
-								<label class="col-md-2 control-lable" for="title">Title</label>
+							<div class="form-group col-md-20">
+								<label class="col-md-5 control-lable" for="title">Title</label>
 								<div class="col-md-7">
 									<input type="texy" ng-model="ctrl.Blog.title"
 										id="password" class="username form-control input-sm"
@@ -48,8 +126,8 @@
 
 
 						<div class="row">
-							<div class="form-group col-md-12">
-								<label class="col-md-2 control-lable" for="description">description</label>
+							<div class="form-group col-md-20">
+								<label class="col-md-5 control-lable" for="description">Description</label>
 								<div class="col-md-7">
 									<input type="text" ng-model="ctrl.Blog.description" id="description"
 										class="address form-control input-sm"
@@ -60,8 +138,8 @@
 						</div>
 
 						<div class="row">
-							<div class="form-group col-md-12">
-								<label class="col-md-2 control-lable" for="reason">reason</label>
+							<div class="form-group col-md-20">
+								<label class="col-md-5 control-lable" for="reason">Reason</label>
 								<div class="col-md-7">
 									<input type="tel" ng-model="ctrl.Blog.reason" id="reason"
 										class="mobile form-control input-sm"
@@ -78,8 +156,8 @@
 							<div class="form-actions floatRight">
 								<input type="submit" value="Create"
 									class="btn btn-primary btn-sm">
-								<button type="button" ng-click="ctrl.reset()"
-									class="btn btn-warning btn-sm">Reset Form</button>
+								<input type="button" value="Reset" ng-click="ctrl.reset()"
+									class="btn btn-danger btn-sm">Reset Form</button>
 							</div>
 						</div>
 					</form>

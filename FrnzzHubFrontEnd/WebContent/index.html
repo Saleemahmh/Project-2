@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="myApp" ng-controller="UserController as ctrl">
 <head>
 
    <meta charset="utf-8">
@@ -56,23 +56,37 @@ body {
 
 
 </style>
-
+<script>
+    $(document).ready(
+			function() {
+				$(".dropdown").hover(
+						function() {
+							$('.dropdown-menu', this).not('.in .dropdown-menu')
+									.stop(true, true).slideDown("400");
+							$(this).toggleClass('open');
+						},
+						function() {
+							$('.dropdown-menu', this).not('.in .dropdown-menu')
+									.stop(true, true).slideUp("400");
+							$(this).toggleClass('open');
+						});
+			});
+    </script>
 
 
 
 <body>
-	<div class="container">
+	<div class="container" >
 		<div class="panel panel-default">
-			<div class="panel-body">FRNZZZZZHUB
+			<div class="panel-body"><img src="https://www.freelogoservices.com/api/main/images/1j+ojl1FOMkX9WypfBe43D6kjPWCrBBJnhvJwXs1M3EMoAJtlCgqhvRv9vU...">
 				
 				 <ul class="nav navbar-nav navbar-right">
    
-<!--       <li><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
-       <li><a href="#/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+     <li><a href="#" ng-click="ctrl.logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         
-            </div>
+           
     
-    </ul>
+    </ul></div></div>
 			</div>
 			<nav class="navbar navbar-default">
 			<div class="container-fluid">
