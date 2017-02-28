@@ -57,24 +57,12 @@ private String userid;
 	}
 
 
-	/* @OneToOne
-	    @JoinColumn(name = "cartId")
-	    @JsonIgnore
-	    private Cart cart;*/
+	
 	public String getUserid() {
 		return userid;
 	}
 
-	/*public Cart getCart() {
-		return cart;
-	}
-
-
-	public void setCart(Cart cart) {
-		this.cart = cart;
-	}*/
-
-
+	
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}

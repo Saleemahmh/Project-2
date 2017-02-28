@@ -16,6 +16,10 @@ app.config(function($routeProvider) {
     templateUrl : 'c_blog/list_blog.html',
     controller  : 'BlogController'
   })
+   .when('/view_blog', {
+    templateUrl : 'c_blog/view_blog.html',
+    controller  : 'BlogController'
+  })
   .when('/create_blog', {
     templateUrl : 'c_blog/create_blog.html',
     controller  : 'BlogController'

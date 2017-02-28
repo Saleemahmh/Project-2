@@ -24,13 +24,7 @@ public class FriendDAOImpl implements FriendDAO {
 	this.sessionFactory = sessionFactory;
 	}
 	
-	/*private Integer getMaxId()
-	{
-		String hql= "select max(id) from Friend";
-		Query query =sessionFactory.getCurrentSession().createQuery(hql);
-		Integer maxId = (Integer) query.uniqueResult();
-		return maxId;	
-	}*/
+	
 	@Transactional
 	public boolean save(Friend friend)
 	{
